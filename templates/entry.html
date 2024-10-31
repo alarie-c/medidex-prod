@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{name}} - Medidex</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="static\medidex_green.png" alt="Medidex" href="#">
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button id="search-button">Search</button>
+        </div>
+        <button>Home</button>
+        <button>About</button>
+        <button>Index</button>
+        <button>Contact</button>
+    </nav>
+
+    <div class="content">
+        <div class="header">
+            <h1>{{name}}</h1>
+            <p>{{clas}}</p>
+        </div>
+        <h3>Use Case</h3>
+        <p>{{use}}</p>
+        <h3>Function</h3>
+        <p>{{func}}</p>
+        <h3>How It's Administered</h3>
+        <p>{{routes}}</p>
+        <h3>Side Effects</h3>
+        <p>{{effects}}</p>
+        <h3>Brands</h3>
+        <p>{{brands}}</p>
+        <h3>Citations</h3>
+        {% for cit in citations %}
+            <div class="citation">
+                <h1>{{cit['uid']}}. {{cit['source']}}</h1>
+                <p>{{cit['title']}}</p>
+                <a href="{{cit['link']}}">Click to read more</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
