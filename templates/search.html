@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{name}} - Medidex</title>
+    <title>Search for '{{param}}' - Medidex</title>
     <link rel="stylesheet" href="static\style.css">
 </head>
 
@@ -30,27 +30,23 @@
 
     <div class="content">
         <div class="header">
-            <h1>{{name}}</h1>
-            <p>{{clas}}</p>
+            <h1>Search Results</h1>
+            <p>Displaying {{n}} results</p>
         </div>
-        <h3>Use Case</h3>
-        <p>{{use}}</p>
-        <h3>Function</h3>
-        <p>{{func}}</p>
-        <h3>How It's Administered</h3>
-        <p>{{routes}}</p>
-        <h3>Side Effects</h3>
-        <p>{{effects}}</p>
-        <h3>Brands</h3>
-        <p>{{brands}}</p>
-        <h3>Citations</h3>
-        {% for cit in citations %}
-            <div class="citation">
-                <h1>{{cit['uid']}}. {{cit['source']}}</h1>
-                <p>{{cit['title']}}</p>
-                <a href="{{cit['link']}}">Click to read more</a>
+
+        {% for res in results %}
+            <div class="result">
+                <div class="result-left">
+                    <h2>{{res['name']}}</h2>
+                    <p>{{res['truncated']}}</p>
+                </div>
+                <div class="result-right">
+                    <button id="result-view">View More</button>
+                </div>
             </div>
         {% endfor %}
     </div>
+
 </body>
+
 </html>

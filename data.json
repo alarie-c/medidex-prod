@@ -1,0 +1,21 @@
+{
+    "ondansetron": {
+        "name": "Ondansetron",
+        "clas": "(Anti-emetic)",
+        "tags": [],
+        "use": "Ondansetron is used to prevent vomiting and naseau, commonly paired with chemotherapy treatment for cancer.",
+        "truncated": "Ondansetron is used to prevent vomiting...",
+        "func": "Ondansetron antagonizes serotonin receptors in the brain and Vagus nerve, preventing nausea and vomiting triggers in the body from reaching the brain.",
+        "routes": "Oral (PO), Intramuscular (IM), Intravenous (IV)",
+        "effects": "headaches, fatigue, dry mouth, malaise, constipation",
+        "brands": "Zofran",
+        "citations": [
+            {
+                "uid": "1",
+                "title": "Ondansetron",
+                "source": "National Library of Medicine",
+                "link": "https://medlineplus.gov/druginfo/meds/a601209.html"
+            }
+        ]
+    }
+}

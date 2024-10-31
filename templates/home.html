@@ -11,17 +11,19 @@
 
 <body>
     <nav class="navbar">
-        <img src="static\medidex_green.png" alt="Medidex" href="#">
+        <img src="static\medidex_green.png" alt="MediDex" href="#">
         <div class="search-container">
-            <input type="text" placeholder="Search..." class="search-input">
-            <button id="search-button">Search</button>
+            <form action="" method="post">
+                <input type="text" placeholder="Search..." class="search-input", name="search-box">
+                <button type="submit" id="search-button">Search</button>
+            </form>
         </div>
         <button>Home</button>
         <button>About</button>
         <button>Index</button>
         <button>Contact</button>
         <div class="count-container">
-            <h1>150</h1>
+            <h1>{{n}}</h1>
             <p>entries (and counting)</p>
         </div>
     </nav>
