@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search for '{{param}}' - Medidex</title>
     <link rel="stylesheet" href="static\style.css">
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+    </script>
 </head>
 
 <body>
@@ -18,10 +23,10 @@
                 <button type="submit" id="search-button">Search</button>
             </form>
         </div>
-        <button>Home</button>
-        <button>About</button>
-        <button>Index</button>
-        <button>Contact</button>
+        <button onclick="goToPage('/')">Home</button>
+        <button onclick="goToPage('/')">About</button>
+        <button onclick="goToPage('/')">Index</button>
+        <button onclick="goToPage('/')">Contact</button>
         <div class="count-container">
             <h1>{{n}}</h1>
             <p>entries (and counting)</p>
@@ -41,7 +46,10 @@
                     <p>{{res['truncated']}}</p>
                 </div>
                 <div class="result-right">
-                    <button id="result-view">View More</button>
+                    <a href="/{{res['namelower']}}">
+                        <button id="result-view">View More</button>
+                    </a>
+                    
                 </div>
             </div>
         {% endfor %}

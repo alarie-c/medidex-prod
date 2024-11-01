@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - MediDex</title>
+    <link rel="stylesheet" href="static\style.css">
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="static\medidex_green.png" alt="MediDex" href="#">
+        <div class="search-container">
+            <form action="" method="post">
+                <input type="text" placeholder="Search..." class="search-input", name="search-box">
+                <button type="submit" id="search-button">Search</button>
+            </form>
+        </div>
+        <button onclick="goToPage('/')">Home</button>
+        <button onclick="goToPage('/about')">About</button>
+        <button onclick="goToPage('/')">Index</button>
+        <button onclick="goToPage('/')">Contact</button>
+        <div class="count-container">
+            <h1>{{n}}</h1>
+            <p>entries (and counting)</p>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="section">
+            <h2>About Us</h2>
+            <p>
+                MediDex's vision is to be an incredibly simple and uncomplicated platform to make accessing information
+                about medications easy and simple.
+                Lots of people who didn't grow up with technology understandably have a hard time keeping up with it and
+                navigating the rapidly changing technological climate.
+                Moreover, there are lots of people with disabilities or other accessibility concerns that make
+                navigating the web difficult and time consuming.
+                At MediDex, we hope to relieve these issues and provide a platform that is astonishingly simple to use.
+            </p>
+        </div>
+        <div class="section-dark">
+            <h2>Meet The Team</h2>
+            <div class="three-wide">
+                <div class="member">
+                    <img src="imgs/placeholder.jpg" alt="placeholder">
+                    <h3>Colin Heathcott</h3>
+                    <p>MediDex's vision is to be an incredibly simple and uncomplicated platform to make accessing
+                        information
+                        about medications easy and simple.</p>
+                </div>
+                <div class="member">
+                    <img src="imgs/placeholder.jpg" alt="placeholder">
+                    <h3>Nila Harish</h3>
+                    <p>MediDex's vision is to be an incredibly simple and uncomplicated platform to make accessing
+                        information
+                        about medications easy and simple.</p>
+                </div>
+                <div class="member">
+                    <img src="imgs/placeholder.jpg" alt="placeholder">
+                    <h3>Matteus Espinola</h3>
+                    <p>MediDex's vision is to be an incredibly simple and uncomplicated platform to make accessing
+                        information
+                        about medications easy and simple.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

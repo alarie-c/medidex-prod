@@ -3,76 +3,75 @@ import backend
 
 app = Flask(__name__)
 
-# # TEMPORARY
-# ondansetron = {
-#     "name": "Ondansetron",
-#     "clas": "(Anti-emetic)",
-#     "tags": [],
-#     "use": "Ondansetron is used to prevent vomiting and naseau, commonly paired with chemotherapy treatment for cancer.",
-#     "func": "Ondansetron antagonizes serotonin receptors in the brain and Vagus nerve, preventing nausea and vomiting triggers in the body from reaching the brain.",
-#     "routes": "Oral (PO), Intramuscular (IM), Intravenous (IV)",
-#     "effects": "headaches, fatigue, dry mouth, malaise, constipation",
-#     "brands": "Zofran",
-#     "citations": [
-#             {
-#                 "uid": "1",
-#                 "title": "Ondansetron",
-#                 "source": "National Library of Medicine",
-#                 "link": "https://medlineplus.gov/druginfo/meds/a601209.html"
-#             }
-#         ]
-# }
+N = 150
 
-# do a search
-# result = backend.search_for('ondans')
-# print(result.unwrap())
-n = 150
-def entry(data):
-    print(data['name'])
+@app.route('/search/<param>', methods=['GET', 'POST'])
+def search(param):
+    results = []
+    n = 0
 
-@app.route('/search/<param>')
-def search(param, results, n: int):
-    print(param)
-    print(results)
+    if request.method == 'POST':
+        # Get search parameter from form data
+        search_param = request.form.get('search-box')
+        name_results = backend.search_for(search_param)
+
+        # Check if search results are valid
+        if name_results.unwrap() != 0:
+            # Process each name in search results
+            for name in name_results.unwrap():
+                d = backend.get_dict_from_name(name)
+                if d is not None:
+                    d['namelower'] = d['name'].lower()
+                    results.append(d)
+
+            # Set `n` to the length of results
+            n = name_results.len()
+        else:
+            return 'There was an error'
+
+    # Render the template with results, count `n`, and search parameter `param`
     return render_template('search.html', results=results, n=n, param=param)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        search_param = request.form.get('search-box')
-        name_results: backend.SearchResult = backend.search_for(search_param)
+        param = request.form.get('search-box')
+        return search(param)
+    else:
+        return render_template('home.html', n=N)
+    
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    if request.method == 'POST':
+        param = request.form.get('search-box')
+        return search(param)
+    else:
+        return render_template('about.html', n=N)
 
-        if name_results.unwrap() != 0:
-            results = []
-            for name in name_results.unwrap():
-                d = backend.get_dict_from_name(name)
-                if d != None:
-                    results.append(d)
-                continue
-            return search(search_param, results, name_results.len())
+@app.route('/<name>', methods=['GET', 'POST'])
+def entry(name):
+    if request.method == 'POST':
+        param = request.form.get('search-box')
+        return search(param)
+    else:
+        data = backend.get_dict_from_name(name)
+        if data != None:
+            return render_template(
+                'entry.html',
+                n=N,
+                name=data['name'],
+                clas=data['clas'],
+                use=data['use'],
+                func=data['func'],
+                routes=data['routes'],
+                effects=data['effects'],
+                brands=data['brands'],
+                citations=data['citations']
+            )
         else:
-            return 'There was an error'
+            print("TODO: No results found")
+            return '404'
 
-    return render_template('home.html', n=backend.get_len())
-
-# @app.route('/<name>')
-# def entry(name):
-#     # GRAB JSON FILE FOR NAME
-#     if name == 'ondansetron':
-#         return render_template(
-#             'entry.html', 
-#             name='ondansetron',
-#             clas=ondansetron["clas"],
-#             use=ondansetron["use"],
-#             func=ondansetron["func"],
-#             routes=ondansetron["routes"],
-#             effects=ondansetron["effects"],
-#             brands=ondansetron["brands"],
-#             citations=ondansetron['citations'],
-#         )
-#     else:
-#         return f'Displaying page for {name}'
-        
 # @app.route('/admin')
 # def redir():
 #     return redirect(url_for('home'))
