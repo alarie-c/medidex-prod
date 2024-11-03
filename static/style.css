@@ -133,6 +133,7 @@ body {
 
 .section-dark {
     background-color: #d9d9d9;
+    color: #141414;
     padding: 5px 20px 10px 20px;
     border-radius: 8px;
 }
@@ -168,10 +169,20 @@ body {
 
 .three-wide {
     display: flex;
+    justify-content: space-between;
+}
+
+.member {
+    flex: 1;
+    box-sizing: border-box;
 }
 
 .three-wide h3 {
     color: #069356;
+}
+
+.section-dark p {
+    color: #141414;
 }
 
 /* Section dark */
