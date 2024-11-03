@@ -3,7 +3,7 @@ import backend
 
 app = Flask(__name__)
 
-N = 150
+N = 4
 
 @app.route('/search/<param>', methods=['GET', 'POST'])
 def search(param):
@@ -55,16 +55,22 @@ def entry(name):
         return search(param)
     else:
         data = backend.get_dict_from_name(name)
+        tags = backend.split_tags(data)
+        print(tags)
+        
         if data != None:
             return render_template(
                 'entry.html',
                 n=N,
+                tags=tags,
                 name=data['name'],
                 clas=data['clas'],
                 use=data['use'],
                 func=data['func'],
                 routes=data['routes'],
                 effects=data['effects'],
+                serious_effects=data['serious_effects'],
+                other=data['other'],
                 brands=data['brands'],
                 citations=data['citations']
             )

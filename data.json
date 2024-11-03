@@ -1,20 +1,84 @@
 {
-    "ondansetron": {
-        "name": "Ondansetron",
-        "clas": "(Anti-emetic)",
+    "Amlodipine": {
+        "name": "Amlodipine",
+        "clas": "(Calcium channel blocker)",
         "tags": [],
-        "use": "Ondansetron is used to prevent vomiting and naseau, commonly paired with chemotherapy treatment for cancer.",
-        "truncated": "Ondansetron is used to prevent vomiting...",
-        "func": "Ondansetron antagonizes serotonin receptors in the brain and Vagus nerve, preventing nausea and vomiting triggers in the body from reaching the brain.",
-        "routes": "Oral (PO), Intramuscular (IM), Intravenous (IV)",
-        "effects": "headaches, fatigue, dry mouth, malaise, constipation",
-        "brands": "Zofran",
+        "use": "Used to reduce blood pressure and treat pain in the chest resulting from coronary artery disease.",
+        "truncated": "Used to reduce blood pressure and treat pain in the che...",
+        "func": "Calcium causes arteries to constrict or squeeze. Calcium channel blockers, like Amlodipine, prevent calcium from having these effects on the vascular system.",
+        "routes": "Oral tablet, Oral liquid",
+        "effects": "Swelling, Nausea, Lightheadedness, Drowsiness, Muscle stiffness",
+        "serious_effects": "Chest pain, Irregular heart beat, Loss of consciousness ",
+        "other": "Not applicable",
+        "brands": "Norliqva, Katerzia, Norvasc",
         "citations": [
             {
                 "uid": "1",
-                "title": "Ondansetron",
-                "source": "National Library of Medicine",
-                "link": "https://medlineplus.gov/druginfo/meds/a601209.html"
+                "title": "Amlodipine",
+                "source": "American Society of Health-Systems Pharmacists",
+                "link": "https://medlineplus.gov/druginfo/meds/a692044.html#:~:text=Amlodipine"
+            },
+            {
+                "uid": "2",
+                "title": "Calcium channel blockers",
+                "source": "Mayo Clinic",
+                "link": "https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/in-depth/calcium-channel-blockers/art-20047605"
+            }
+        ]
+    },
+    "Lisinopril": {
+        "name": "Lisinopril",
+        "clas": "(ACE inhibitor)",
+        "tags": [
+            "<!p>"
+        ],
+        "use": "Used to reduce blood pressure and to treat those with heart failure.",
+        "truncated": "Used to reduce blood pressure and to treat those with h...",
+        "func": "ACE (angiotensin-converting enzyme) inhibitors help prevent the body from synthesizing angiotensin, an enzyme that constricts the blood vessels, causing them to be narrowing. This increased blood pressure, so by preventing those enzymes from being formed, the blood vessels can relax blood pressure is allowed to decrease.",
+        "routes": "Oral tablet, Oral liquid",
+        "effects": "Cough, Lightheadedness, Headache, Drowsiness, Weakness, Diarrhea, Sneezing and runny nose, Rash",
+        "serious_effects": "Swelling, Hoarseness in voice, Difficulty breathing, Jaundice, Stomach pain, Loss of consciousness  Chest pain, Fever, Sore Throat, Chills, or any other signs of possible infection",
+        "other": "Do not stop taking Lisinopril without consulting your doctor, even if you feel well.",
+        "brands": "Prinivil, Zestril, Qbrelis, Zestoretic",
+        "citations": [
+            {
+                "uid": "1",
+                "title": "Lisinopril",
+                "source": "American Society of Health-Systems Pharmacists",
+                "link": "https://medlineplus.gov/druginfo/meds/a692051.html"
+            },
+            {
+                "uid": "2",
+                "title": "Angiontensin-converting enzyme inhibitors",
+                "source": "Mayo Clinic",
+                "link": "https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/in-depth/ace-inhibitors/art-20047480"
+            }
+        ]
+    },
+    "Losartan": {
+        "name": "Losartan",
+        "clas": "(Angiotensin receptor blocker)",
+        "tags": [],
+        "use": "Used to treat high blood pressure and heart failure. ",
+        "truncated": "Used to treat high blood pressure and heart failure. ...",
+        "func": "Angiotensine receptor blockers, or ARBs, prevent angiotensiin from constricting the blood vessels. Angiotensine is an enzyme that narrows the blood vesselsm, thus increasing blood pressure.",
+        "routes": "Oral tablet",
+        "effects": "Lightheadedness, Headaches, Nausea or vomiting, Diarrhea, Joint pain, Muscle pain",
+        "serious_effects": "Jaundice in eyes or skin, Pale skin, Bruising or purple spots, Fever, Sore throat, Irregular heart beat, Muscle weakness, Muscle cramps, Pins and needles sensations, Stomach pain",
+        "other": "Not applicable",
+        "brands": "Cozaar",
+        "citations": [
+            {
+                "uid": "1",
+                "title": "Losartan",
+                "source": "National Health Service",
+                "link": "https://www.nhs.uk/medicines/losartan/"
+            },
+            {
+                "uid": "2",
+                "title": "Angiontensin II receptor blockers",
+                "source": "Mayo Clinic",
+                "link": "https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/in-depth/angiotensin-ii-receptor-blockers/art-20045009"
             }
         ]
     }

@@ -61,9 +61,29 @@ def search_for(param: str) -> SearchResult:
 def get_len() -> int:
     return DATA.len()
 
-def get_dict_from_name(name) -> dict | None:
-    d = DATA.data.get(name)
+def get_dict_from_name(name: str) -> dict | None:
+    d = DATA.data.get(name.capitalize())
     if d != None:
         return d
     else:
         return None
+    
+def split_tags(entry: dict) -> list[str]:
+    final_tags: list[str] = []
+    for tag in entry['tags']:
+        # Remove the begining section
+        if tag.startswith('<!custom>'):
+            final_tags.append(tag[9:])
+        elif tag == '<!p>':
+            final_tags.append('Do not take this medication while pregnant - it may cause serious complications!')
+        elif tag == '<!a>':
+            final_tags.append('Do not take this medication with alogol - it may cause serious complications!')
+        elif tag == '<!controlled>':
+            final_tags.append(
+                'This is a controlled substance. Please take caution when dosing and taking this medication. '
+                'For help battling addiction, visit: https://americanaddictioncenters.org/'
+            )
+        else:
+            print(f'Unexpected tag: {tag}')
+
+    return final_tags

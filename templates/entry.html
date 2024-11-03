@@ -34,6 +34,13 @@
     </nav>
 
     <div class="content">
+        <!-- Tags -->
+        {% for tag in tags %}
+            <div class="tag">
+                <p>{{tag}}</p>
+            </div>
+        {% endfor %}
+
         <div class="header">
             <h1>{{name}}</h1>
             <p>{{clas}}</p>
@@ -46,6 +53,11 @@
         <p>{{routes}}</p>
         <h3>Side Effects</h3>
         <p>{{effects}}</p>
+        <h3>Serious Side Effects</h3>
+        <p><strong>If you have any of these symptoms, you should see a doctor immediately or go to the Emergency Department</strong></p>
+        <p>{{serious_effects}}</p>
+        <h3>Other Information</h3>
+        <p>{{other}}</p>
         <h3>Brands</h3>
         <p>{{brands}}</p>
         <h3>Citations</h3>

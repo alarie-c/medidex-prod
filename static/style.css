@@ -150,7 +150,7 @@ body {
 }
 
 .content p {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
     margin-top: 10px;
     color: #858585;
@@ -219,4 +219,15 @@ body {
 
 .citation a:hover {
     color: #069356;
+}
+
+.tag {
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+    background-color: #c72828;
+    color: white;
+}
+
+.tag p {
+    color: white;
 }
