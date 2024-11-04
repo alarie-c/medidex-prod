@@ -56,7 +56,6 @@ def entry(name):
     else:
         data = backend.get_dict_from_name(name)
         tags = backend.split_tags(data)
-        print(tags)
         
         if data != None:
             return render_template(
@@ -75,8 +74,7 @@ def entry(name):
                 citations=data['citations']
             )
         else:
-            print("TODO: No results found")
-            return '404'
+            return render_template('404.html', n=N)
 
 # @app.route('/admin')
 # def redir():
