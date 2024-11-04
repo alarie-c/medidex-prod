@@ -242,3 +242,7 @@ body {
 .tag p {
     color: white;
 }
+
+a:hover {
+    color: #069356;
+}

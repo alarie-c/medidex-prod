@@ -55,9 +55,8 @@ def entry(name):
         return search(param)
     else:
         data = backend.get_dict_from_name(name)
-        tags = backend.split_tags(data)
-        
         if data != None:
+            tags = backend.split_tags(data)
             return render_template(
                 'entry.html',
                 n=N,
