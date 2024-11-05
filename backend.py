@@ -3,7 +3,7 @@ import json
 class JsonData:
     def __init__(self, path: str):
         # Opening JSON file
-        with open('data.json') as json_file:
+        with open(path) as json_file:
             self.data: dict = json.load(json_file)
 
         if self.data == {}:
@@ -42,7 +42,8 @@ class SearchResult:
 ############################################################################################
         
 # CONSTANT DATA FILE -- RESULT OF JSON PARSING
-DATA = JsonData('data.json')
+import os
+DATA = JsonData(os.path.join(os.path.dirname(__file__), 'data.json'))
 
 # Will look for the search term/parameter in the name, brands, and class
 # of every entry in JsonData
