@@ -47,13 +47,14 @@ DATA = JsonData('data.json')
 # Will look for the search term/parameter in the name, brands, and class
 # of every entry in JsonData
 def search_for(param: str) -> SearchResult:
+    param = param.lower()
     results = []
     for name, stats in DATA.iterate():
-        if name.__contains__(param):
+        if name.lower().__contains__(param):
             results.append(name)
-        elif stats['brands'].__contains__(param):
+        elif stats['brands'].lower().__contains__(param):
             results.append(name)
-        elif stats['clas'].__contains__(param):
+        elif stats['clas'].lower().__contains__(param):
             results.append(name)
     
     return SearchResult(True, results=results)
